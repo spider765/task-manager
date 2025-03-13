@@ -1,0 +1,4 @@
+<!-- app/views/tasks/new.turbo_stream.erb -->
+<%= turbo_stream.update 'modal-body' do %>
+  <%= render 'form', task: @task %>
+<% end %>

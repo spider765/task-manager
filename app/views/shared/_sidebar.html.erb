@@ -1,0 +1,118 @@
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        .sidebar {
+            width: 250px;
+            background: #121212;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            transition: width 0.3s;
+            overflow: hidden;
+        }
+        .sidebar.collapsed {
+            width: 60px;
+        }
+        .toggle-btn {
+            background: #1E88E5;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 12px;
+
+        }
+        .user-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: opacity 0.3s;
+        }
+        .user-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .user-profile p {
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .sidebar.collapsed .user-profile p {
+            display: none;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .sidebar.collapsed ul li a span {
+            display: none;
+        }
+        .sidebar ul li:hover {
+            background: #1E88E5;
+            border-radius: 12px;
+
+        }
+        .content {
+            margin-left: 140px;
+            padding: 20px;
+            width: 100%;
+            transition: margin-left 0.3s;
+        }
+        .collapsed + .content {
+            margin-left: 60px;
+        }
+    </style>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <div class="user-profile">
+          <%= image_tag 'user-placeholder.png', alt: 'User Image', class: 'profile-pic' %>
+            <p>John Doe</p>
+        </div>
+        <ul>
+            <li><a href="#">🏠 <span>Dashboard</span></a></li>
+            <li><a href="#">📁 <span>Projects</span></a></li>
+            <li><a href="#">📝 <span>Tasks</span></a></li>
+            <li><a href="#">📅 <span>Calendar</span></a></li>
+            <li><a href="#">💬 <span>Chat</span></a></li>
+            <li><a href="#">🔔 <span>Notifications</span></a></li>
+            <li><a href="#">⚙ <span>Settings</span></a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("collapsed");
+            document.getElementById("content").classList.toggle("collapsed");
+        }
+    </script>
+</body>

@@ -1,0 +1,1510 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Default LIGHT MODE (when dark-mode class is NOT present) */
+.sidebar {
+  width: 250px;
+  background: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-right: 2px solid #ddd;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .logo h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #EF6C33;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links li:hover {
+  background: #ddd;
+  color: #000;
+  transform: scale(1.02);
+}
+
+/* DARK MODE (when body has dark-mode class) */
+body.dark-mode .sidebar {
+  background: #121212;
+  color: white;
+  border-right: 2px solid #292929;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .sidebar .logo h2 {
+  color: #EF6C33;
+}
+
+body.dark-mode .nav-links li {
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+body.dark-mode .nav-links li a {
+  color: white;
+}
+
+body.dark-mode .nav-links li:hover {
+  background: #292929; /* Unified hover effect */
+  color: #EF6C33;     /* Accent color on hover */
+  transform: scale(1.02);
+}
+
+/* Smooth transition on light/dark mode switch */
+.sidebar, .nav-links li, .nav-links li a {
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+/* Dark Mode Sidebar Hover */
+body.dark-mode .sidebar ul li:hover {
+    background: #EF6C33; /* Dark hover background */
+    border-radius: 12px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+.info{
+  display: flex;
+  gap:20px;
+  padding: 10px 20px;
+  margin: 0;
+}
+.management{
+  padding: 10px 20px;
+
+  display: flex;
+  gap:20px;
+
+}
+.insight{
+  display: flex;
+  gap:20px;
+
+  padding: 10px 20px;
+
+}
+.calendar-view{
+  display: flex;
+  gap:20px;
+  padding: 10px 20px;
+
+}
+.team-chat{
+  display: flex;
+  gap:20px;
+  padding: 10px 20px;
+
+}
+.content{
+  display: flex;
+  gap:200px;
+
+}
+.search{
+  display: flex;
+  gap:30px;
+  padding: 10px 20px;
+
+}
+.dashboard{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* subtle border */
+  border-radius: 20px; /* slightly reduced for better proportion */
+  padding: 16px; /* space inside card */
+  max-width: 250px; /* responsive max width */
+  min-width: 150px;
+  width: 100%; /* responsive */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow */
+  background-color: white; /* clean background */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover effect */
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* deeper shadow */
+}
+
+/* Member list styling */
+.member-list {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  width: 100%; /* full width */
+  max-width: 600px; /* optional: limit width */
+  margin: 0 auto; /* center if needed */
+}
+.member-list:hover {
+  transform: translateY(-5px); /* lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* deeper shadow */
+}
+/* QUICK ADD BUTTON (Floating Action Button) */
+#quick-add-task {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 32px;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: #ef6c33;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  z-index: 1000;
+}
+
+#quick-add-task:hover {
+  background: #c55727;
+  transform: scale(1.1);
+}
+/* DARK MODE */
+body.dark-mode {
+  background: #222;
+  color: #ddd;
+}
+
+body.dark-mode .search,
+body.dark-mode .card,
+body.dark-mode .member-list,
+body.dark-mode .management,
+body.dark-mode .insight,
+body.dark-mode .calendar-view,
+body.dark-mode .team-chat,
+body.dark-mode .task-card,
+body.dark-mode .calendar,
+body.dark-mode .chart-card,
+body.dark-mode .goal-card {
+  background: #333;
+  color: #ddd;
+  border: 1px solid #555;
+}
+
+body.dark-mode .message.received {
+  background: #444;
+}
+
+body.dark-mode .message.sent {
+  background: #0c4a60;
+  color: white;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background: #555;
+  color: white;
+  border: 1px solid #777;
+}
+
+body.dark-mode button {
+  background: #ef6c33;
+}
+
+body.dark-mode button:hover {
+  background: #c55727;
+}
+body {
+  transition: background 0.3s, color 0.3s;
+}
+/* TASK LIST DEFAULT (LIGHT MODE) */
+.task-list {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* subtle border */
+  border-radius: 20px; /* slightly reduced for better proportion */
+  padding: 16px; /* space inside card */
+  max-width: 250px; /* responsive max width */
+  min-width: 150px;
+  width: 100%; /* responsive */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow */
+  background-color: white; /* clean background */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* HOVER EFFECT */
+.task-list:hover {
+  transform: translateY(-5px); /* lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* deeper shadow */
+}
+
+/* DARK MODE */
+body.dark-mode .task-list {
+  border: 1px solid rgba(255, 255, 255, 0.1); /* subtle light border */
+  background-color: #333; /* dark background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* deeper shadow for dark mode */
+  color: #ddd; /* light text */
+}
+
+/* DARK MODE HOVER */
+body.dark-mode .task-list:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* stronger shadow */
+  transform: translateY(-5px);
+}
+
+
+
+/* TASK FILTERS CONTAINER */
+.task-filters:hover {
+  transform: translateY(-5px); /* lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* deeper shadow */
+}
+.task-filters {
+  display: grid;
+  gap: 25px;
+  align-items: center;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: white;
+  margin-bottom: 20px;
+}
+
+/* FILTER SELECT & DATE INPUT */
+.task-filters select,
+.task-filters input[type="date"] {
+  padding: 10px 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f9f9f9;
+  color: #333;
+  min-width: 150px;
+  transition: border 0.3s;
+}
+
+.task-filters select:focus,
+.task-filters input[type="date"]:focus {
+  border-color: #0c4a60;
+  outline: none;
+}
+
+/* FILTER BUTTON */
+.task-filters button {
+  padding: 10px 20px;
+  border: none;
+  background: #0c4a60;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-filters button:hover {
+  background: #093847;
+}
+
+/* DARK MODE STYLING */
+body.dark-mode .task-filters {
+  background: #333;
+  border: 1px solid #555;
+}
+
+body.dark-mode .task-filters select,
+body.dark-mode .task-filters input[type="date"] {
+  background: #555;
+  color: white;
+  border: 1px solid #777;
+}
+
+body.dark-mode .task-filters select:focus,
+body.dark-mode .task-filters input[type="date"]:focus {
+  border-color: #ef6c33;
+}
+
+body.dark-mode .task-filters button {
+  background: #ef6c33;
+}
+
+body.dark-mode .task-filters button:hover {
+  background: #c55727;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .task-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-filters select,
+  .task-filters input[type="date"],
+  .task-filters button {
+    width: 100%;
+  }
+}
+/* KANBAN BOARD WRAPPER */
+.kanban-column:hover{
+  transform: translateY(-5px); /* lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* deeper shadow */
+}
+.kanban-board {
+  display: grid;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* KANBAN COLUMN */
+.kanban-column {
+  flex: 1 1 300px;
+  min-width: 280px;
+  background: #f1f1f1;
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+/* COLUMN HEADER */
+.kanban-column h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* TASK LIST CONTAINER */
+.task-list1 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 50px;
+}
+
+/* TASK CARD */
+.task-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.task-card p {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* HOVER & ACTIVE STATES */
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.task-card:active {
+  cursor: grabbing;
+  transform: scale(1.02);
+}
+
+/* DARK MODE */
+body.dark-mode .kanban-column {
+  background: #333;
+  border: 2px solid #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .kanban-column h3 {
+  color: #ddd;
+}
+
+body.dark-mode .task-card {
+  background: #444;
+  border: 1px solid #555;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  color: #ddd;
+}
+
+body.dark-mode .task-card h4 {
+  color: #fff;
+}
+
+body.dark-mode .task-card p {
+  color: #ccc;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .kanban-column {
+    min-width: 240px;
+  }
+
+  .task-card {
+    padding: 10px;
+  }
+}
+/* INSIGHT CONTAINER */
+.insight {
+  display: flex;
+
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* SECTION HEADINGS */
+.insight h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* PROGRESS CHARTS */
+.progress-charts .charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CHART CARDS */
+.chart-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.chart-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  color: #777;
+  font-size: 1rem;
+}
+
+/* Hover Effect */
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* GOAL TRACKER */
+.goal-tracker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.goal-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goal-card h3 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.goal-card p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+/* PROGRESS BAR */
+.goal-card progress {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  appearance: none;
+}
+
+.goal-card progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.goal-card progress::-webkit-progress-value {
+  background-color: #0c4a60;
+  border-radius: 10px;
+}
+
+.goal-card progress::-moz-progress-bar {
+  background-color: #0c4a60;
+  border-radius: 10px;
+}
+
+/* Hover Effect */
+.goal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ACTIVITY LOG */
+.activity-log ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-log li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: #444;
+  transition: background 0.3s ease;
+}
+
+.activity-log li:hover {
+  background: #f0f0f0;
+}
+.activity-log:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+/* DARK MODE */
+body.dark-mode .insight h2,
+body.dark-mode .chart-card h3,
+body.dark-mode .goal-card h3 {
+  color: #ddd;
+}
+
+body.dark-mode .chart-card,
+body.dark-mode .goal-card,
+body.dark-mode .activity-log li {
+  background: #333;
+  border: 1px solid #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .chart-placeholder {
+  background: #444;
+  color: #aaa;
+}
+
+body.dark-mode .goal-card p,
+body.dark-mode .activity-log li {
+  color: #ccc;
+}
+
+/* DARK MODE PROGRESS */
+body.dark-mode .goal-card progress::-webkit-progress-bar {
+  background-color: #555;
+}
+
+body.dark-mode .goal-card progress::-webkit-progress-value {
+  background-color: #ef6c33;
+}
+
+body.dark-mode .goal-card progress::-moz-progress-bar {
+  background-color: #ef6c33;
+}
+
+/* ACTIVITY LOG DARK MODE HOVER */
+body.dark-mode .activity-log li:hover {
+  background: #3a3a3a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .charts-container,
+  .goal-tracker {
+    grid-template-columns: 1fr;
+  }
+
+  .insight {
+    padding: 15px;
+  }
+}
+/* CONTAINER */
+.calendar-view {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* UNIVERSAL CARD STYLE */
+.calendar-view section {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-view section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* SECTION HEADINGS */
+.calendar-view h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* FILE UPLOAD FORM */
+.file-upload-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-upload-section input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #f9f9f9;
+}
+
+.file-upload-section button {
+  padding: 12px 20px;
+  background-color: #0c4a60;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.file-upload-section button:hover {
+  background-color: #0a3a4d;
+}
+
+/* ATTACHMENTS LIST */
+.attachments-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.attachments-list li {
+  padding: 10px 0;
+}
+
+.attachments-list a {
+  color: #0c4a60;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.attachments-list a:hover {
+  color: #ef6c33;
+  text-decoration: underline;
+}
+
+/* DEADLINE REMINDERS */
+.deadline-reminders ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.deadline-reminders li {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.deadline-reminders li:hover {
+  background: #eef7fa;
+}
+
+.reminder-alert {
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
+
+/* HORIZONTAL SEPARATOR */
+hr {
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+/* DARK MODE */
+body.dark-mode .calendar-view section {
+  background: #333;
+  color: #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .calendar-view h2 {
+  color: #ef6c33;
+}
+
+body.dark-mode .file-upload-section input[type="file"] {
+  background: #444;
+  color: #ddd;
+  border: 1px solid #555;
+}
+
+body.dark-mode .file-upload-section button {
+  background-color: #ef6c33;
+}
+
+body.dark-mode .file-upload-section button:hover {
+  background-color: #d95c2a;
+}
+
+body.dark-mode .attachments-list a {
+  color: #ef6c33;
+}
+
+body.dark-mode .attachments-list a:hover {
+  color: #ff7c4d;
+}
+
+body.dark-mode .deadline-reminders li {
+  background: #444;
+  color: #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .deadline-reminders li:hover {
+  background: #555;
+}
+
+body.dark-mode hr {
+  background: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .calendar-view {
+    padding: 15px;
+  }
+
+  .file-upload-section button {
+    width: 100%;
+  }
+
+  .deadline-reminders li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+/* CALENDAR STYLING */
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.calendar th, .calendar td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+}
+
+.calendar th {
+  background-color: #0c4a60;
+  color: white;
+  font-weight: bold;
+}
+
+.calendar td {
+  background: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.calendar td:hover {
+  background: #e8f4f8;
+}
+
+/* Highlight today's date (optional if dynamic) */
+.calendar td.today {
+  background: #ef6c33;
+  color: white;
+  font-weight: bold;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode .calendar-view h2 {
+  color: #ddd;
+}
+
+body.dark-mode .file-upload-section input[type="file"] {
+  background: #333;
+  color: #ddd;
+  border: 1px solid #555;
+}
+
+body.dark-mode .file-upload-section button {
+  background-color: #ef6c33;
+}
+
+body.dark-mode .file-upload-section button:hover {
+  background-color: #d95c2a;
+}
+
+body.dark-mode .attachments-list a {
+  color: #ef6c33;
+}
+
+body.dark-mode .attachments-list a:hover {
+  color: #ff7c4d;
+}
+
+body.dark-mode .deadline-reminders li {
+  background: #333;
+  color: #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .deadline-reminders li:hover {
+  background: #3d3d3d;
+}
+
+body.dark-mode .calendar {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .calendar th {
+  background: #ef6c33;
+}
+
+body.dark-mode .calendar td {
+  background: #444;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark-mode .calendar td:hover {
+  background: #555;
+}
+
+body.dark-mode .calendar td.today {
+  background: #0c4a60;
+}
+
+/* HORIZONTAL LINE SEPARATOR */
+hr {
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+body.dark-mode hr {
+  background: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .calendar-view {
+    padding: 15px;
+  }
+
+  .calendar th, .calendar td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .file-upload-section button {
+    width: 100%;
+  }
+
+  .deadline-reminders li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+/* MAIN WRAPPER */
+.team-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* GENERAL CARD STYLING */
+.team-chat section {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-chat section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.team-chat h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+/* CHAT SYSTEM */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.messages {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f9f9f9;
+}
+
+.message {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.message.received {
+  background: #e6f5fa;
+  align-self: flex-start;
+}
+
+.message.sent {
+  background: #d1fadf;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #0c4a60;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: #09394b;
+}
+
+/* COMMENTS SECTION */
+.comments-box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.comment {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: #e8f0fe;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+
+.comment small {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.comment-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.comment-input textarea {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.comment-input button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #0c4a60;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.comment-input button:hover {
+  background: #09394b;
+}
+
+/* NOTIFICATIONS SECTION */
+.notifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifications-list li {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  line-height: 1.5;
+}
+
+.notifications-list li:last-child {
+  border-bottom: none;
+}
+
+.notifications-list em {
+  font-style: italic;
+  color: #0c4a60;
+}
+
+.notifications-list small {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode .team-chat section {
+  background: #333;
+  color: #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .team-chat h2 {
+  color: #ef6c33;
+}
+
+body.dark-mode .messages,
+body.dark-mode .comments-box {
+  background: #444;
+  border: 1px solid #555;
+}
+
+body.dark-mode .message.received {
+  background: #555;
+}
+
+body.dark-mode .message.sent {
+  background: #666;
+}
+
+body.dark-mode .comment {
+  background: #555;
+}
+
+body.dark-mode .notifications-list li {
+  border-bottom: 1px solid #555;
+}
+
+body.dark-mode .notifications-list em {
+  color: #ef6c33;
+}
+
+body.dark-mode .chat-input input,
+body.dark-mode .comment-input textarea {
+  background: #555;
+  border: 1px solid #666;
+  color: #ddd;
+}
+
+body.dark-mode .chat-input button,
+body.dark-mode .comment-input button {
+  background: #ef6c33;
+}
+
+body.dark-mode .chat-input button:hover,
+body.dark-mode .comment-input button:hover {
+  background: #d45c2c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .chat-input input,
+  .comment-input textarea {
+    font-size: 0.9rem;
+  }
+
+  .chat-input button,
+  .comment-input button {
+    padding: 8px 16px;
+  }
+
+  .team-chat h2 {
+    font-size: 1.4rem;
+  }
+}
+/* SEARCH BAR STYLING */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.search input:focus {
+  border: 1px solid #0c4a60;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode .search {
+  background: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .search input {
+  background: #444;
+  color: #ddd;
+  border: 1px solid #666;
+}
+
+body.dark-mode .search input::placeholder {
+  color: #aaa;
+}
+
+/* HEADER */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+body.dark-mode h1 {
+  color: #ef6c33;
+}
+
+/* CUSTOM SLIDER TOGGLE */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When checked */
+input:checked + .slider {
+  background-color: #0c4a60;
+}
+
+/* Move the circle when checked */
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Rounding the slider */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .search input {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .switch {
+    width: 40px;
+    height: 24px;
+  }
+
+  .slider:before {
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(16px);
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.quick-add-btn {
+  font-size: 24px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  background: #EF6C33;
+  color: white;
+  cursor: pointer;
+}
+.task-form {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: #1E88E5;
+  box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #EF6C33;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-button:hover {
+  background-color: #d65928;
+  transform: scale(1.02);
+}
+
+.form-button:active {
+  transform: scale(0.98);
+}
+body.dark-mode .task-form {
+  background: #1e1e1e;
+  color: #E1DDDB;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .form-input,
+body.dark-mode .form-textarea {
+  background: #2b2b2b;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-mode .form-button {
+  background: #EF6C33;
+}
+
+body.dark-mode .form-button:hover {
+  background: #d65928;
+}
+/* Dark Mode */
+body.dark-mode .modal-content {
+  background: #1e1e1e;
+  color: #E1DDDB;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .close-btn {
+  color: #E1DDDB;
+}
+
+body.dark-mode .close-btn:hover {
+  color: #EF6C33;
+}

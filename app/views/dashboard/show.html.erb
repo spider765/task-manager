@@ -1,0 +1,352 @@
+<div class="content" id="content">
+
+        <div class="dashboard">
+          <h1>Welcome to Task Manager</h1>
+
+  <div class="search">
+    <input type="text" placeholder="Search tasks, projects, team...">
+
+    <!-- Theme Toggle Slider -->
+    <section class="dark-mode-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider round"></span>
+      </label>
+    </section>
+  </div>
+
+
+
+
+          <div class="info">
+              <div class="card">
+                  <h5>Total Tasks</h5>
+                  <p id="totalTasks">0</p>
+              </div>
+              <div class="card">
+                  <h5>Completed Tasks</h5>
+                  <p id="completedTasks">0</p>
+              </div>
+              <div class="card">
+                  <h5>Pending Tasks</h5>
+                  <p id="pendingTasks">0</p>
+              </div>
+              <div class="member-list">
+                  <h2>Team member List</h2>
+                  <ul>
+                      <li> 1 - <span>dan</span></li>
+                      <li>2 - <span>dave</span></li>
+                      <li> 3 - <span>emma</span></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="management">
+
+  <div class="task-list">
+      <h2>Task List</h2>
+      <ul>
+          <li>Task 1 - <span>Due: 2025-03-10</span></li>
+          <li>Task 2 - <span>Due: 2025-03-12</span></li>
+          <li>Task 3 - <span>Due: 2025-03-15</span></li>
+      </ul>
+  </div>
+
+    <!-- Task Filters -->
+    <div class="task-filters">
+        <select name="priority" id="filter-priority">
+            <option value="">Priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+
+        <select name="assignee" id="filter-assignee">
+            <option value="">Assignee</option>
+            <option value="user1">John Doe</option>
+            <option value="user2">Jane Smith</option>
+            <option value="user3">Mike Johnson</option>
+        </select>
+
+        <input type="date" name="due-date" id="filter-due-date">
+        <button id="apply-filters">Apply Filters</button>
+    </div>
+
+    <!-- Kanban Board -->
+    <div class="kanban-board">
+
+        <!-- To-Do Column -->
+        <div class="kanban-column" id="todo">
+            <h3>To-Do</h3>
+            <div class="task-list1" id="todo-tasks">
+                <div class="task-card" draggable="true">
+                    <h4>Task Title 1</h4>
+                    <p>Task Description</p>
+                    <p><small>Due: 2025-03-20</small></p>
+                </div>
+                <div class="task-card" draggable="true">
+                    <h4>Task Title 2</h4>
+                    <p>Task Description</p>
+                    <p><small>Due: 2025-03-22</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- In Progress Column -->
+        <div class="kanban-column" id="in-progress">
+            <h3>In Progress</h3>
+            <div class="task-list1" id="progress-tasks">
+                <div class="task-card" draggable="true">
+                    <h4>Task Title 3</h4>
+                    <p>Task Description</p>
+                    <p><small>Due: 2025-03-21</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Done Column -->
+        <div class="kanban-column" id="done">
+            <h3>Done</h3>
+            <div class="task-list1" id="done-tasks">
+                <div class="task-card" draggable="true">
+                    <h4>Task Title 4</h4>
+                    <p>Task Description</p>
+                    <p><small>Completed: 2025-03-19</small></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Floating Quick Add Button -->
+    <!-- Quick Add Task Button -->
+    <button id="quick-add-task" class="quick-add-btn">＋</button>
+
+    <!-- Modal Placeholder -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <div id="modal-body">
+          <!-- Turbo Stream will replace this content -->
+        </div>
+      </div>
+    </div>
+
+
+
+          </div>
+          <div class="insight">
+
+    <!-- Progress Charts Section -->
+    <section class="progress-charts">
+        <h2>Task Progress Overview</h2>
+        <div class="charts-container">
+            <!-- Placeholder for Pie Chart -->
+            <div class="chart-card">
+                <h3>Completed vs Pending Tasks</h3>
+                <div class="chart-placeholder" id="pie-chart-placeholder">
+                    <!-- You can later replace this with a real chart (e.g., Chart.js) -->
+                    <p>[Pie Chart]</p>
+                </div>
+            </div>
+
+            <!-- Placeholder for Bar Graph -->
+            <div class="chart-card">
+                <h3>Tasks by Category</h3>
+                <div class="chart-placeholder" id="bar-graph-placeholder">
+                    <p>[Bar Graph]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily/Weekly Goal Tracker -->
+    <section class="goal-tracker">
+        <h2>Daily & Weekly Goals</h2>
+
+        <div class="goal-card">
+            <h3>Daily Goal</h3>
+            <p>Tasks Completed: <strong>3/5</strong></p>
+            <progress value="3" max="5"></progress>
+        </div>
+
+        <div class="goal-card">
+            <h3>Weekly Goal</h3>
+            <p>Tasks Completed: <strong>12/20</strong></p>
+            <progress value="12" max="20"></progress>
+        </div>
+    </section>
+
+    <!-- Activity Log -->
+    <section class="activity-log">
+        <h2>Recent Activities</h2>
+        <ul>
+<li>hi</li>
+        </ul>
+    </section>
+
+
+          </div>
+
+          <div class="calendar-view">
+      <!-- File Upload & Attachments -->
+      <section class="file-upload-section">
+          <h2>Attach Files to Task</h2>
+          <form>
+              <label for="fileUpload">Select files to attach:</label><br>
+              <input type="file" id="fileUpload" name="attachments" multiple><br><br>
+              <button type="submit">Upload Files</button>
+          </form>
+
+          <h3>Attached Files</h3>
+          <ul class="attachments-list">
+              <li><a href="#">Project_Proposal.pdf</a></li>
+              <li><a href="#">Design_Mockup.png</a></li>
+          </ul>
+      </section>
+
+      <hr>
+
+      <!-- Deadline Reminders -->
+      <section class="deadline-reminders">
+          <h2>Upcoming Deadlines</h2>
+          <ul class="reminder-list">
+              <li><strong>Finish UI Design</strong> – Due in 2 days <span class="reminder-alert">⏰</span></li>
+              <li><strong>Client Meeting</strong> – Tomorrow at 10 AM <span class="reminder-alert">📅</span></li>
+              <li><strong>Submit Report</strong> – Due in 4 days <span class="reminder-alert">⚠️</span></li>
+          </ul>
+      </section>
+
+      <hr>
+
+
+
+      <!-- Optional Script for Dark Mode -->
+
+
+            </div>
+            <!-- Calendar View -->
+            <section class="calendar-view1">
+                <h2>Project Calendar</h2>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+          <div class="team-chat">
+
+
+  <!-- Chat System Section -->
+  <section class="chat-system">
+      <h2>Team Chat</h2>
+      <div class="chat-box">
+          <div class="messages">
+              <div class="message received">
+                  <strong>Jane:</strong> Hey team! Did anyone check the client feedback yet?
+              </div>
+              <div class="message sent">
+                  <strong>You:</strong> Yes, I reviewed it this morning. Looks good!
+              </div>
+              <div class="message received">
+                  <strong>Mike:</strong> Great! Let's move forward then. @John can you finalize the designs?
+              </div>
+          </div>
+          <div class="chat-input">
+              <input type="text" placeholder="Type a message and use @ to mention..." />
+              <button>Send</button>
+          </div>
+      </div>
+  </section>
+
+  <!-- Comment Section on Tasks/Projects -->
+  <section class="comments-section">
+      <h2>Task Comments</h2>
+      <div class="comments-box">
+          <div class="comment">
+              <strong>Sarah:</strong> Don't forget to add the client's logo to the homepage design. <small>1 hour ago</small>
+          </div>
+          <div class="comment">
+              <strong>John:</strong> Sure, I'll do that today. <small>30 minutes ago</small>
+          </div>
+      </div>
+      <div class="comment-input">
+          <textarea placeholder="Write a comment... Use @ to mention teammates."></textarea>
+          <button>Add Comment</button>
+      </div>
+  </section>
+
+  <!-- Mentions & Notifications -->
+  <section class="notifications-section">
+      <h2>Notifications</h2>
+      <ul class="notifications-list">
+          <li><strong>Mike</strong> mentioned you in <em>"Marketing Plan Update"</em> – <small>5 minutes ago</small></li>
+          <li><strong>Jane</strong> commented on <em>"Project Alpha"</em> – <small>20 minutes ago</small></li>
+          <li><strong>Sarah</strong> assigned you a task <em>"Fix login issue"</em> – <small>1 hour ago</small></li>
+          <li><strong>John</strong> completed the task <em>"Draft Proposal"</em> – <small>Yesterday</small></li>
+      </ul>
+  </section>
+
+
+
+          </div>
+
+
+        </div>
+
+</div>
